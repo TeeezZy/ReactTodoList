@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom';
 
 const styles = (theme) => ({
   root: {
@@ -12,6 +13,10 @@ const styles = (theme) => ({
   },
   button: {
     margin: theme.spacing.unit,
+    color: '#e3f2fd',
+  },
+  link: {
+    textDecoration: 'none',
     color: '#e3f2fd',
   },
 });
@@ -23,8 +28,16 @@ function Navbar(props) {
       <AppBar position='static'>
         <Toolbar variant='dense'>
           <Box m='auto'>
-            <Button className={classes.button}>Todolist</Button>
-            <Button className={classes.button}>Profiles</Button>
+            <Button className={classes.button}>
+              <Link to='/' className={classes.link}>
+                Todolist
+              </Link>
+            </Button>
+            <Button className={classes.button}>
+              <Link to='/fetched_todos' className={classes.link}>
+                Fetched todos
+              </Link>
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

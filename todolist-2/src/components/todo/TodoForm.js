@@ -52,6 +52,7 @@ class TodoForm extends React.Component {
     const newTodo = {
       id: Date.now().toString(),
       title,
+      completed: false,
     };
 
     this.props.createTodo(newTodo);

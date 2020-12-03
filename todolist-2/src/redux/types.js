@@ -1,3 +1,7 @@
 export const CREATE_TODO = 'POST/CREATE_TODO';
 export const DELETE_TODO = 'POST/DELETE_TODO';
+export const TOGGLE_TODO = 'POST/TOGGLE_TODO';
 export const FETCH_TODO = 'POST/FETCH_TODO';
+export const REQUEST_TODOS = 'POST/REQUEST_TODOS';
+export const SHOW_LOADER = 'APP/SHOW_LOADER';
+export const HIDE_LOADER = 'APP/HIDE_LOADER';
