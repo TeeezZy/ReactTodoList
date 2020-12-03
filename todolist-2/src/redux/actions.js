@@ -1,4 +1,11 @@
-import { CREATE_TODO, DELETE_TODO, TOGGLE_TODO, REQUEST_TODOS } from './types';
+import {
+  CREATE_TODO,
+  DELETE_TODO,
+  TOGGLE_TODO,
+  REQUEST_TODOS,
+  SHOW_LOADER,
+  HIDE_LOADER,
+} from './types';
 
 export function createTodo(todo) {
   return {
@@ -24,5 +31,17 @@ export function toggleTodo(id) {
 export function fetchTodos() {
   return {
     type: REQUEST_TODOS,
+  };
+}
+
+export function showLoader() {
+  return {
+    type: SHOW_LOADER,
+  };
+}
+
+export function hideLoader() {
+  return {
+    type: HIDE_LOADER,
   };
 }

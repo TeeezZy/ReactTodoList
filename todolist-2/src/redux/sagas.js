@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { hideLoader, showAlert, showLoader } from './actions';
+import { hideLoader, showLoader } from './actions';
 import { FETCH_TODO, REQUEST_TODOS } from './types';
 
 export function* sagaWatcher() {
@@ -8,13 +8,13 @@ export function* sagaWatcher() {
 
 function* sagaWorker() {
   try {
-    // yield put(showLoader());
+    yield put(showLoader());
     const payload = yield call(fetchPosts);
     yield put({ type: FETCH_TODO, payload });
-    // yield put(hideLoader());
+    yield put(hideLoader());
   } catch (e) {
-    // yield put(showAlert('Something went wrong'));
-    // yield put(hideLoader());
+    console.log(e);
+    yield put(hideLoader());
   }
 }
 

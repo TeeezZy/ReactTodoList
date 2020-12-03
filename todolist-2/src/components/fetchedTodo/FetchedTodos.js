@@ -2,6 +2,7 @@ import { Button } from '@material-ui/core';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTodos } from '../../redux/actions';
+import Loader from '../Loader';
 import FetchedTodo from './FetchedTodo';
 
 const styles = {
@@ -17,6 +18,10 @@ export default () => {
     return state.todos.fetchedTodos;
   });
 
+  const loading = useSelector((state) => {
+    return state.app.loading;
+  });
+
   const onClickHandler = (event) => {
     dispatch(fetchTodos());
   };
@@ -27,6 +32,10 @@ export default () => {
         Load todos
       </Button>
     );
+  }
+
+  if (loading) {
+    return <Loader />;
   }
 
   return fetchedTodos.map((todo) => <FetchedTodo todo={todo} key={todo.id} />);
