@@ -1,4 +1,11 @@
-import { CREATE_TODO, DELETE_TODO, FETCH_TODO, TOGGLE_TODO } from './types';
+import {
+  CHECK_ALL_TODOS,
+  CREATE_TODO,
+  DELETE_TODO,
+  FETCH_TODO,
+  TOGGLE_TODO,
+  UNCHECK_ALL_TODOS,
+} from './types';
 
 const initialState = {
   syncTodos: [],
@@ -27,6 +34,22 @@ export const todosReducer = (state = initialState, action) => {
             todo.completed = !todo.completed;
             return todo;
           }
+          return todo;
+        }),
+      };
+    case CHECK_ALL_TODOS:
+      return {
+        ...state,
+        syncTodos: state.syncTodos.map((todo) => {
+          todo.completed = true;
+          return todo;
+        }),
+      };
+    case UNCHECK_ALL_TODOS:
+      return {
+        ...state,
+        syncTodos: state.syncTodos.map((todo) => {
+          todo.completed = false;
           return todo;
         }),
       };

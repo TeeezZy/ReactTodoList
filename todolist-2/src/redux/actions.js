@@ -5,6 +5,8 @@ import {
   REQUEST_TODOS,
   SHOW_LOADER,
   HIDE_LOADER,
+  CHECK_ALL_TODOS,
+  UNCHECK_ALL_TODOS,
 } from './types';
 
 export function createTodo(todo) {
@@ -43,5 +45,17 @@ export function showLoader() {
 export function hideLoader() {
   return {
     type: HIDE_LOADER,
+  };
+}
+
+export function checkAllTodos() {
+  return {
+    type: CHECK_ALL_TODOS,
+  };
+}
+
+export function uncheckAllTodos() {
+  return {
+    type: UNCHECK_ALL_TODOS,
   };
 }
