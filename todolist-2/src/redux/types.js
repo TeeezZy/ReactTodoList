@@ -1,0 +1,3 @@
+export const CREATE_TODO = 'POST/CREATE_TODO';
+export const DELETE_TODO = 'POST/DELETE_TODO';
+export const FETCH_TODO = 'POST/FETCH_TODO';
